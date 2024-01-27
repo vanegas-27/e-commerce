@@ -6,4 +6,11 @@ html{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    /* font-size: var(--fs-small); */
 }
+
+body{
+    background-color: var(--bgBone);
+}
+
+/* https://tinypng.com */

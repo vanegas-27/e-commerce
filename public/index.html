@@ -1,9 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <!--descripcion de pagina-->
+    <meta name="description"
+        content="e-commerce diseñado para la divulgacion de la diversa informacion que la empresa  tiene en su catalogo." />
+
+    <!--palabras claves-->
+    <meta name="keywords"
+        content="libros, book, guerra de tronos, aprendizaje, revelio en la granja, literatura universal, literatura, conde de montecristo, novelas, fabulas, diversidad">
+
+    <!--para decirle al los robots que la pagina sea mas visible al usuario-->
+    <meta name="robots" content="index,follow">
+
+    <!--author-->
+    <meta name="author" content="Davinson Andres Vanegas Tabares">
+    <meta name="author" content="Santiago Arango Benjumea">
+
+    <!--derechos de autor-->
+    <meta name="copyright" content="Davinson vanegas">
+    <meta name="copyright" content="Santiago Arango">
+
+    <!--cache-->
+    <meta http-equiv="cache-control" content="cache">
+    <!--tiempo de cache-->
+    <meta http-equiv="expires" content="0">
 
 
     <!-- links de fuentes-->
@@ -18,6 +43,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
+    <!--link de icons bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!--links de css-->
     <link rel="stylesheet" href="./assets/styles/variables.css">
@@ -29,15 +56,191 @@
 
 
   </head>
+
   <body>
+
     <header class="container m-aunto">
-    <h1 class="w-100 bg-primary"> hola soy el header </h1>
+        <figure>
+            <img src="../public/assets/img/pop-up.png" alt="logo e-commerce" class="img-fluid">
+        </figure>
+        
+        <h1>E-Commerce</h1>
+
+        <ul class="d-flex">
+            <li><i class="bi bi-cloud-moon-fill"></i></li>
+            <li><i class="bi bi-cart4"></i></li>
+        </ul>
+
     </header>
+
+
     <main class="container m-aunto">
-        <h1 class="w-100 bg-primary"> hola soy el header </h1>
+
+        <!--banner e-commerce-->
+        <section id="carouselExampleIndicators" class="carousel slide">
+
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <img src="../public/assets/img/pop-up.png" class="d-block w-100" alt="...">
+              </div>
+
+              <div class="carousel-item">
+                <img src="../public/assets/img/pop-up.png" class="d-block w-100" alt="...">
+              </div>
+
+              <div class="carousel-item">
+                <img src="../public/assets/img/pop-up.png" class="d-block w-100" alt="...">
+              </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+        </section>
+
+        <!--libros destacados-->
+        <section class="d-flex">
+            <img src="../public/assets/img/pop-up.png" alt="Libro destacado" class="img-fluid">
+            <img src="../public/assets/img/pop-up.png" alt="Libro destacado" class="img-fluid">
+            <img src="../public/assets/img/pop-up.png" alt="Libro destacado" class="img-fluid">
+            <img src="../public/assets/img/pop-up.png" alt="Libro destacado" class="img-fluid">
+        </section>
+
+
+        <!--catalogo-->
+        <section>
+
+            <article>
+                <span><i class="bi bi-x-lg"></i></span>
+
+                <figure>
+                    <img src="../public/assets/img/pop-up.png" alt="Foto libro catalogo" class="img-fluid">
+                </figure>
+
+                <div>
+                    <h2>titulo</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur praesentium, corpori</p>
+                    &starf;&starf;&starf;&starf;&star;
+
+                    <div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            comprar
+                            </button>
+                        <button><i class="bi bi-cart-plus"></i></button>
+                    </div>
+
+                </div>
+            </article>
+
+            <article>
+                <span><i class="bi bi-x-lg"></i></span>
+
+                <figure>
+                    <img src="../public/assets/img/pop-up.png" alt="Foto libro catalogo" class="img-fluid">
+                </figure>
+
+                <div>
+                    <h2>titulo</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur praesentium, corpori</p>
+                    &starf;&starf;&starf;&starf;&star;
+
+                    <div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            comprar
+                            </button>
+                        <button><i class="bi bi-cart-plus"></i></button>
+                    </div>
+
+                </div>
+            </article>
+
+            <article>
+                <span><i class="bi bi-x-lg"></i></span>
+
+                <figure>
+                    <img src="../public/assets/img/pop-up.png" alt="Foto libro catalogo" class="img-fluid">
+                </figure>
+
+                <div>
+                    <h2>titulo</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur praesentium, corpori</p>
+                    &starf;&starf;&starf;&starf;&star;
+
+                    <div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            comprar
+                            </button>
+                        <button><i class="bi bi-cart-plus"></i></button>
+                    </div>
+
+                </div>
+            </article>
+
+            <article>
+                <span><i class="bi bi-x-lg"></i></span>
+
+                <figure>
+                    <img src="../public/assets/img/pop-up.png" alt="Foto libro catalogo" class="img-fluid">
+                </figure>
+
+                <div>
+                    <h2>titulo</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur praesentium, corpori</p>
+                    &starf;&starf;&starf;&starf;&star;
+
+                    <div>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            comprar
+                            </button>
+                        <button><i class="bi bi-cart-plus"></i></button>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+
     </main>
+
     <footer class="container m-aunto">
-        <h1 class="w-100 bg-primary"> hola soy el header </h1>
+
     </footer>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          ...
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Confirmar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   </body>
 </html>
