@@ -1,7 +1,7 @@
 window.onload = iniciar();
 
 function iniciar(){
-
-    alert('funcionando');
+    
+    console.log("funcionando js");
 
 };
