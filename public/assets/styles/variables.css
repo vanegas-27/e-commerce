@@ -6,7 +6,7 @@
     --white: #fff;
     
 
-    /* gackground */
+    /* background */
     --bgBone : #f5f5f5;
     --bgSecundary : #143214;
     --bgSecundary-200 : #244423;
@@ -21,6 +21,10 @@
     --color4 : #1D7373;
     --color5 : #107361;
 
+    /*colors sombra*/
+
+    --colorS : #218585;
+
 
     /* contrast */
     --asdas : #3C4850;
@@ -30,12 +34,13 @@
 
     /* fonts */
     --fontPrimary : 'Lora', serif; 
-    --fontSecundary :'Lato', sans-serif;
+    --fontSecondary :'Lato', sans-serif;
 
 
     /* sizes font */
     --fs-small : .8rem;
     --fs-normal : 1rem;
+    --fs-normal1 : 1.1rem;
     --fs-media : 1.2rem;
     --fs-large : 1.4rem;
     --fs-extra : 1.6rem;

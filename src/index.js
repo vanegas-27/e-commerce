@@ -1,6 +1,10 @@
-$(document).ready(function(){
-
-    // jQuery methods go here...
-    console.log("funcionado jquery");
+// $(document).ready(function($){
   
+// });
+
+
+$(() => {
+
+    console.log("funcionado jquery");
+
 });
