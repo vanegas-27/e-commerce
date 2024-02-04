@@ -1,3 +1,29 @@
+<?php
+
+include ("../src/php/render.php");
+include("../src/php/components/banner.php");
+include("../src/php/components/destacados.php");
+include("../src/php/components/catalogo.php");
+
+
+
+$base = new Bd();
+
+$banners = $base->query("SELECT * FROM banners");
+
+$destacados = $base->query("SELECT * FROM destacados");
+
+$catalogo = $base->query("SELECT * FROM catalogo");
+
+// echo "<pre>";
+// print_r($);
+// echo "</pre>";
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -62,10 +88,11 @@
 </head>
 
 <body data-bs-theme="light">
+
   <header class="container-fluid container-header pt-3 text-center" id="inicio">
     <div class="container row justify-content-evenly pb-1 m-auto">
       <figure class="col-5 col-md-3 d-flex align-items-center m-0 order-1 order-md-2">
-        <a href="./index.html"><img src="../public/assets/img/logo sin fondo.png" alt="logo e-commerce"
+        <a href="./index.php"><img src="../public/assets/img/logo sin fondo.png" alt="logo e-commerce"
             class="img-fluid" /></a>
       </figure>
 
@@ -82,25 +109,29 @@
       <ul class="d-none d-sm-flex m-auto justify-content-evenly py-1 px-0">
         <li><a href="#inicio">Inicio <i class="bi bi-house"></i></a></li>
         <li><a href="#catalogo">Catalogo <i class="bi bi-journal-bookmark-fill"></i></a></li>
-        <li><a href="">Cuenta<i class="bi bi-person-badge"></i></a></li>
+        <li><a href="#">Cuenta<i class="bi bi-person-badge"></i></a></li>
         <li><a href="#conocenos">Conocenos <i class="bi bi-question-circle"></i></a></li>
       </ul>
     </nav>
   </header>
 
+  <!--menu cel-->
   <aside class="menuCel d-block d-sm-none">
     <ul class="p-0 m-0 w-75 m-auto">
-      <li><i class="bi bi-house"></i></li>
-      <li><i class="bi bi-journal-bookmark-fill"></i></li>
-      <li><i class="bi bi-person-badge"></i></li>
-      <li><i class="bi bi-question-circle"></i></li>
+      <li><a href="#inicio"><i class="bi bi-house"></i></a></li>
+      <li><a href="#catalogo"><i class="bi bi-journal-bookmark-fill"></i></a></li>
+      <li><a href="#"><i class="bi bi-person-badge"></i></a></li>
+      <li><a href="#conocenos"><i class="bi bi-question-circle"></i></a></li>
     </ul>
   </aside>
 
   <main class="container-fluid m-auto p-0">
-    <!--banner e-commerce-->
 
+    <!---desde aqui-->
+
+    <!--banner e-commerce-->
     <section id="carouselExampleIndicators" class="carousel slide container-banner">
+
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
           aria-current="true" aria-label="Slide 1"></button>
@@ -111,19 +142,7 @@
       </div>
 
       <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <img src="../public/assets/img/baner-berserk.webp" class="d-block w-100 img-fluid" alt="..." />
-        </div>
-
-        <div class="carousel-item">
-          <img src="../public/assets/img/baner-principal houses.webp" class="d-block w-100 img-fluid" alt="..." />
-        </div>
-
-        <div class="carousel-item">
-          <img src="../public/assets/img/baner-marcaSacrificio.webp" class="d-block w-100 img-fluid" alt="..." />
-        </div>
-        
+        <?=banners($banners)?>
       </div>
 
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -141,16 +160,12 @@
 
     <!--libros destacados-->
     <section class="destacados justify-content-between justify-content-md-around">
-      <img src="../public/assets/img/cancion de hielo y fuego-choque de reyes.webp" alt="Libro destacado"
-        class="img-fluid" />
-      <img src="../public/assets/img/cancion de hielo y fuego-danza de dragones.webp" alt="Libro destacado"
-        class="img-fluid" />
-      <img src="../public/assets/img/cancion de hielo y fuego-festin de cuervos.webp" alt="Libro destacado"
-        class="img-fluid" />
-      <img src="../public/assets/img/cancion de hielo y fuego-juego de tronos.webp" alt="Libro destacado"
-        class="img-fluid" />
+
+      <?=destacados($destacados)?>
+
     </section>
 
+    <!--filtro-->
     <section class="text-end align-items-center p-2 querys">
 
       <select>
@@ -167,160 +182,11 @@
 
     <!--catalogo-->
     <section class="d-flex gap-2 my-4 px-3 catalogo" id="catalogo">
-
-      <div class="card">
-        <img src="../public/assets/img/un-mundo-feliz.webp" alt="Foto libro catalogo" class="img-fluid" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <span class="star d-flex gap-2">
-            &starf;&starf;&starf;&starf;&star;
-            <i>$30000</i>
-          </span>
-          <div class="botons">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Ver
-            </button>
-            <button class="btn btn-outline-primary">
-              <i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../public/assets/img/un-mundo-feliz.webp" alt="Foto libro catalogo" class="img-fluid" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <span class="star d-flex gap-2">
-            &starf;&starf;&starf;&starf;&star;
-            <i>$30000</i>
-          </span>
-          <div class="botons">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Ver
-            </button>
-            <button class="btn btn-outline-primary">
-              <i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../public/assets/img/un-mundo-feliz.webp" alt="Foto libro catalogo" class="img-fluid" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <span class="star d-flex gap-2">
-            &starf;&starf;&starf;&starf;&star;
-            <i>$30000</i>
-          </span>
-          <div class="botons">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Ver
-            </button>
-            <button class="btn btn-outline-primary">
-              <i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../public/assets/img/amor a cuatro estaciones.webp" alt="Foto libro catalogo" class="img-fluid" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <span class="star d-flex gap-2">
-            &starf;&starf;&starf;&starf;&star;
-            <i>$30000</i>
-          </span>
-          <div class="botons">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Ver
-            </button>
-            <button class="btn btn-outline-primary">
-              <i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../public/assets/img/pop-up.png" alt="Foto libro catalogo" class="img-fluid" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <span class="star d-flex gap-2">
-            &starf;&starf;&starf;&starf;&star;
-            <i>$30000</i>
-          </span>
-          <div class="botons">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Ver
-            </button>
-            <button class="btn btn-outline-primary">
-              <i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../public/assets/img/pop-up.png" alt="Foto libro catalogo" class="img-fluid" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <span class="star d-flex gap-2">
-            &starf;&starf;&starf;&starf;&star;
-            <i>$30000</i>
-          </span>
-          <div class="botons">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Ver
-            </button>
-            <button class="btn btn-outline-primary">
-              <i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../public/assets/img/pop-up.png" alt="Foto libro catalogo" class="img-fluid" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <span class="star d-flex gap-2">
-            &starf;&starf;&starf;&starf;&star;
-            <i>$30000</i>
-          </span>
-          <div class="botons">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Ver
-            </button>
-            <button class="btn btn-outline-primary">
-              <i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="../public/assets/img/pop-up.png" alt="Foto libro catalogo" class="img-fluid" />
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <span class="star d-flex gap-2">
-            &starf;&starf;&starf;&starf;&star;
-            <i>$30000</i>
-          </span>
-          <div class="botons">
-            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Ver
-            </button>
-            <button class="btn btn-outline-primary">
-              <i class="bi bi-cart-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
+      <?= catalogo($catalogo)?>
     </section>
+
+
+    <!---hasta aqui-->
 
     <!-- Modal -->
     <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -335,7 +201,7 @@
 
           <div class="modal-body ventanaModal">
             <figure>
-            <img src="../public/assets/img/un-mundo-feliz.webp" class="rounded mx-auto d-block" alt="amor a 4 estaciones">
+            <img src="../public/assets/img/1984.webp" class="rounded mx-auto d-block" alt="amor a 4 estaciones">
             </figure>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum libero tempora laudantium similique dolor iure, numquam reiciendis eum consequatur quas excepturi aspernatur minima quos nam aliquid doloremque molestias atque eveniet.</p>
             <p class="modal-footer">comment</p>
@@ -350,40 +216,23 @@
         </div>
       </div>
     </div>
-  </main>
 
+  </main>
 
   <footer class="text-center text-white" id="conocenos">
     <div class="container">
       <section class="mt-5">
-        <div class="row text-center d-flex justify-content-center pt-5">
+        <div class="row text-center d-none justify-content-center pt-5 d-sm-flex">
 
           <ul class="container d-flex flex-wrap justify-content-center gap-5">
             <li class="colmd-2 text-uppercase font-weight-bold"><a href="#inicio">inicio <i class="bi bi-house"></i></a>
             </li>
             <li class="colmd-2 text-uppercase font-weight-bold"><a href="#catalogo">catalogo <i
                   class="bi bi-journal-bookmark-fill"></i></a></li>
-            <li class="colmd-2 text-uppercase font-weight-bold"><a href="#cuenta">cuenta <i
-                  class="bi bi-person-badge"></i></a></li>
+            <li class="colmd-2 text-uppercase font-weight-bold"><a href="#cuenta">cuenta <i class="bi bi-person-badge"></i></a></li>
+            <li class="colmd-2 text-uppercase font-weight-bold"><a href="#conocenos">Conocenos <i class="bi bi-question-circle"></i></a></li>
+
           </ul>
-          <!-- 
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#inicio">Inicio <i class="bi bi-house"></i></a>
-            </h6>
-          </div>
-
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#catalogo">Catalogo <i class="bi bi-journal-bookmark-fill"></i></a>
-            </h6>
-          </div>
-
-          <div class="col-md-2">
-            <h6 class="text-uppercase font-weight-bold">
-              cuenta<i class="bi bi-person-badge"></i>
-            </h6>
-          </div> -->
 
         </div>
       </section>
@@ -420,6 +269,7 @@
     </div>
 
   </footer>
+
 </body>
 
 </html>

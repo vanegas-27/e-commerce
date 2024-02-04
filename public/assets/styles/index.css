@@ -210,8 +210,14 @@ body {
 
 
 .catalogo .card {
+    width: 100%;
     max-width: 300px;
     margin: 10px 0px;
+}
+
+.catalogo .card img{
+    height: 20rem;
+    object-fit: cover;
 }
 
 .catalogo h5 {
