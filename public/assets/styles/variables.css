@@ -26,6 +26,9 @@ body[data-bs-theme="ligth"]{
         --sombra1 : #218585;
         --sombra2 : #c9c9c9;
         --sombra3 : #107361af;
+
+        /*colors modal*/
+        --modal: #11244649;
     
     
         /* contrast */
@@ -74,7 +77,7 @@ body[data-bs-theme="dark"]{
 
 
     /* colors */
-    --color1 : #ffffff;
+    --color1 : #f5f5f5;
     --color2 : #0cbcd3;
     --color3 : #000000;
     --color4 : #1D7373;
@@ -85,6 +88,10 @@ body[data-bs-theme="dark"]{
     --sombra1 : #218585;
     --sombra2 : #c9c9c9;
     --sombra3 : #107361af;
+
+    /*colors modal*/
+    --modal: #c6d3eb49;
+
 
 
     /* contrast */
