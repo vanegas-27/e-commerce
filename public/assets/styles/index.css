@@ -2,6 +2,12 @@ html{
     font-family: 60.5%;
 }
 
+:root{
+    --bg-color: #181a1b;
+    --text-color: #d9d9d9;
+    --link-color: #ff7472;
+}
+
 
 /*clases animadas*/
 
@@ -13,6 +19,14 @@ html{
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+}
+a,li{
+    text-decoration: none;
+    color: var(--color1);
+
+    &:hover{
+        color: var(--bgBone);
+    }
 }
 
 body{
@@ -48,7 +62,6 @@ body{
     &:hover{
 
         color: var(--bgBone);
-
         &.heartbeat {
             animation: heartbeat 1.2s ease-in-out infinite both;
         }
@@ -62,17 +75,63 @@ body{
 
 .container-header nav ul li{
     font-size: var(--fs-normal);
+    font-size: var(--fs-media);
     font-family: var(--fontSecondary);
     font-weight: 600;
     padding: 3px 7px;
     cursor: pointer;
+    border-radius: 10px;
     transition: all .20s ease-in;
 
     &:hover{
         color: var(--bgBone);
-        transform: scale(1.1);
+        background-color: #09463b77;
     }
 
+}
+
+.container-header button{
+    color: var(--bgBone);
+    background-color: var(--color1);
+    margin-bottom: 10px;
+    transition: all 0.30s ease-in-out;
+
+    &:hover{
+        background-color: var(--bgBone);
+        color: var(--color1);
+    }
+}
+
+
+.menuCel{
+    position: relative;
+  }
+
+.menuCel ul{
+    /* background-color: var(--sombra3); */
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 15px;
+    color: var(--color1);
+    background-color: var(--color5);
+    box-shadow: 0px -2px 20px var(--black);
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 5;
+}
+
+.menuCel ul li{
+    cursor: pointer;
+    font-size: 1.8rem;
+    padding: 3px 5px;
+    transition: all .30s ease-in-out;
+
+    &:hover{
+        color: var(--bgBone);
+        transform: scale(.90);
+    }
 }
 
 .container-banner .carousel-inner div img{
@@ -83,7 +142,7 @@ body{
 
 
 .destacados{
-    background-color: var(--sombra2);
+    /* background-color: var(--sombra2); */
     display: flex;
     gap: 10px;
     padding: 10px;
@@ -104,29 +163,92 @@ body{
     object-fit: cover;
     scroll-snap-align: center;
     transform: scale(.80);
-    /*
+    
     filter:grayscale(1);
     transition: all .30s ease-in-out;
 
     &:hover{
         transform: none;
         filter: none;
+        z-index: 4;
         box-shadow: 3px 3px 5px var(--black)
-    } */
+    }
+
+
+}
+
+
+.querys{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 10px;
+    justify-content: end;
+    gap: 5px;
+    align-items: center;
+}
+
+.querys select,
+.querys input{
+    padding: 6px 6px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid var(--color4);
+    /* box-shadow: 1px 1px 2px var(--black); */
+    
+}
+
+
+.catalogo{
+    max-width: 1000px;
+    margin: 0px auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.catalogo .card{
+    max-width: 300px;
+    margin: 10px 0px;
+}
+
+.catalogo h5{
+    font-family: var(--fontPrimary);
+    font-weight: 700;
+}
+
+.catalogo p{
+    font-family: var(--fontSecondary);
+    font-weight: 300;
+}
+
+.catalogo .star{
+    color: var(--color4);
+    font-size: var(--fs-large);
+}
+
+.botons{
+    margin: 0px auto;
+    display: table;
+
+}
+
+.catalogo button{
+    /* padding: 3px 9px; */
+    width:6rem;
+    margin: 15px 10px;    
 }
 
 
 
 
 
+footer{
+    background-color: var(--bgSecundary-400);
 
-
-
-
-
-
-
-
+    .copy{
+        background-color: var(--bgSecundary);
+    }
+}
 
 
 
@@ -157,4 +279,10 @@ body{
       animation-timing-function: ease-out;
     }
   }
+  
+
+
+
+
+
   

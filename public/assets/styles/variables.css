@@ -1,4 +1,63 @@
-:root{
+:root,
+body[data-bs-theme="ligth"]{
+
+        /* default */
+        --black : #000;
+        --white: #fff;
+        
+    
+        /* background */
+        --bgBone : #f5f5f5;
+        --bgSecundary : #143214;
+        --bgSecundary-200 : #244423;
+        --bgSecundary-300 : #2a5328;
+        --bgSecundary-400 : #2A5328;
+    
+    
+        /* colors */
+        --color1 : #042326;
+        --color2 : #0A3A40;
+        --color3 : #0F5959;
+        --color4 : #1D7373;
+        --color5 : #107361;
+    
+        /*colors sombra*/
+    
+        --sombra1 : #218585;
+        --sombra2 : #c9c9c9;
+        --sombra3 : #107361af;
+    
+    
+        /* contrast */
+        --asdas : #3C4850;
+        --prueba : #6F645F;
+    
+    
+    
+        /* fonts */
+        --fontPrimary : 'Lora', serif; 
+        --fontSecondary :'Lato', sans-serif;
+    
+    
+        /* sizes font */
+        --fs-small : .8rem;
+        --fs-normal : 1rem;
+        --fs-normal1 : 1.1rem;
+        --fs-media : 1.2rem;
+        --fs-large : 1.4rem;
+        --fs-extra : 1.6rem;
+    
+        
+        --fs-jumbo : 2rem;
+        --fs-jumbo2 : 2.4rem;
+        --fs-jumbo3 : 2.8rem;
+        --fs-jumbo4 : 3.2rem;
+        
+}
+
+
+
+body[data-bs-theme="dark"]{
 
 
     /* default */
@@ -7,17 +66,17 @@
     
 
     /* background */
-    --bgBone : #f5f5f5;
+    --bgBone : #000000;
     --bgSecundary : #143214;
-    --bgSecundary-200 : #244423;
+    --bgSecundary-200 : #044701;
     --bgSecundary-300 : #2a5328;
     --bgSecundary-400 : #2A5328;
 
 
     /* colors */
-    --color1 : #042326;
-    --color2 : #0A3A40;
-    --color3 : #0F5959;
+    --color1 : #ffffff;
+    --color2 : #0cbcd3;
+    --color3 : #000000;
     --color4 : #1D7373;
     --color5 : #107361;
 
@@ -25,6 +84,7 @@
 
     --sombra1 : #218585;
     --sombra2 : #c9c9c9;
+    --sombra3 : #107361af;
 
 
     /* contrast */

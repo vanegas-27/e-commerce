@@ -1,7 +1,2 @@
-window.onload = iniciar();
 
-function iniciar(){
-    
-    console.log("funcionando js");
-
-};
+console.log("funcionando");
