@@ -21,6 +21,8 @@ body{
 
 .container-header{
     background-color: var(--color5);
+    /* background-color: var(--bgBone); */
+
 }
 
 .container-header figure{
@@ -73,13 +75,46 @@ body{
 
 }
 
-
-
 .container-banner .carousel-inner div img{
     width: 100%;
-    height: 75vh;
-    object-fit: fill;
+    height: 78vh;
+    object-fit: cover;
 }
+
+
+.destacados{
+    background-color: var(--sombra2);
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+}
+
+
+.destacados img{
+    height: 250px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px var(--black);
+    object-fit: cover;
+    scroll-snap-align: center;
+    transform: scale(.80);
+    /*
+    filter:grayscale(1);
+    transition: all .30s ease-in-out;
+
+    &:hover{
+        transform: none;
+        filter: none;
+        box-shadow: 3px 3px 5px var(--black)
+    } */
+}
+
 
 
 
