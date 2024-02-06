@@ -28,7 +28,8 @@ body[data-bs-theme="ligth"]{
         --sombra3 : #107361af;
 
         /*colors modal*/
-        --modal: #11244649;
+        --modal: #1125465e;
+        --modal2 : #000000b2;
     
     
         /* contrast */
@@ -91,6 +92,7 @@ body[data-bs-theme="dark"]{
 
     /*colors modal*/
     --modal: #c6d3eb49;
+    --modal2 : #c2bfbfb2;
 
 
 

@@ -1,12 +1,16 @@
 ```
 └── 📁e-commerce
     └── .gitignore
+    └── apuntes.jQuery.md
     └── 📁public
         └── 📁assets
             └── 📁img
                 └── 1984.webp
                 └── amor a cuatro estaciones.webp
                 └── aunque tengas miedo hagalo igual.webp
+                └── baner-berserk.webp
+                └── baner-marcaSacrificio.webp
+                └── baner-principal houses.webp
                 └── berserk.webp
                 └── cancion de hielo y fuego-choque de reyes.webp
                 └── cancion de hielo y fuego-danza de dragones.webp
@@ -27,7 +31,16 @@
                 └── el principito.webp
                 └── flores para algernon.webp
                 └── funerales de la mama grande.webp
+                └── icono.jpg
+                └── icono.png
+                └── 📁icons
+                    └── book.svg
+                    └── home.svg
+                    └── question.svg
+                    └── user.svg
                 └── las venas abiertas de america latina.webp
+                └── logo sin fondo.png
+                └── logo.jpg
                 └── matar a un ruiseñor.webp
                 └── mejorias de la casa muerta.webp
                 └── mundo de hielo y fuego.webp
@@ -39,7 +52,19 @@
             └── 📁styles
                 └── index.css
                 └── variables.css
+        └── favicon.ico
         └── index.html
+        └── index.php
     └── 📁src
-        └── app.js
+        └── 📁js
+            └── ajax.js
+            └── index.js
+        └── 📁php
+            └── bd.php
+            └── 📁components
+                └── banner.php
+                └── catalogo.php
+                └── destacados.php
+                └── modal.php
+    └── structur.md
 ```

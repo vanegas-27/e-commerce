@@ -1,9 +1,9 @@
 <?php
 
-include ("../src/php/render.php");
+include("../src/php/bd.php");
 include("../src/php/components/banner.php");
 include("../src/php/components/destacados.php");
-include("../src/php/components/catalogo.php");
+// include("../src/php/components/catalogo.php");
 
 
 
@@ -13,7 +13,7 @@ $banners = $base->query("SELECT * FROM banners");
 
 $destacados = $base->query("SELECT * FROM destacados");
 
-$catalogo = $base->query("SELECT * FROM catalogo");
+// $catalogo = $base->query("SELECT * FROM catalogo");
 
 // echo "<pre>";
 // print_r($);
@@ -36,12 +36,10 @@ $catalogo = $base->query("SELECT * FROM catalogo");
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
   <!--descripcion de pagina-->
-  <meta name="description"
-    content="e-commerce diseñado para la divulgacion de la diversa informacion que la empresa  tiene en su catalogo." />
+  <meta name="description" content="e-commerce diseñado para la divulgacion de la diversa informacion que la empresa  tiene en su catalogo." />
 
   <!--palabras claves-->
-  <meta name="keywords"
-    content="libros, book, guerra de tronos, aprendizaje, revelio en la granja, literatura universal, literatura, conde de montecristo, novelas, fabulas, diversidad" />
+  <meta name="keywords" content="libros, book, guerra de tronos, aprendizaje, revelio en la granja, literatura universal, literatura, conde de montecristo, novelas, fabulas, diversidad" />
 
   <!--para decirle al los robots que la pagina sea mas visible al usuario-->
   <meta name="robots" content="index,follow" />
@@ -62,15 +60,11 @@ $catalogo = $base->query("SELECT * FROM catalogo");
   <!-- links de fuentes-->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Lora:ital,wght@1,500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet" />
 
   <!--link de bootstap 5-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   <!--link de icons bootstrap-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
@@ -78,13 +72,14 @@ $catalogo = $base->query("SELECT * FROM catalogo");
   <!--links de css-->
   <link rel="stylesheet" href="./assets/styles/variables.css" />
   <link rel="stylesheet" href="./assets/styles/index.css" />
-  <link rel="stylesheet" href="./assets/styles/styles_desktop.css" media="screen and (min-width: 700px)" />
 
   <!--link de jquey-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-  <script src="../src/index.js"></script>
-  <script defer src="../src/app.js"></script>
+  <script defer src="../src/js/index.js"></script>
+  <script async src="../src/js/ajax.js"></script>
+
+
 </head>
 
 <body data-bs-theme="light">
@@ -92,8 +87,7 @@ $catalogo = $base->query("SELECT * FROM catalogo");
   <header class="container-fluid container-header pt-3 text-center" id="inicio">
     <div class="container row justify-content-evenly pb-1 m-auto">
       <figure class="col-5 col-md-3 d-flex align-items-center m-0 order-1 order-md-2">
-        <a href="./index.php"><img src="../public/assets/img/logo sin fondo.png" alt="logo e-commerce"
-            class="img-fluid" /></a>
+        <a href="./index.php"><img src="../public/assets/img/logo sin fondo.png" alt="logo e-commerce" class="img-fluid" /></a>
       </figure>
 
       <h1 class="col-12 col-md-6 text-center pt-md-3 order-3 order-md-2">
@@ -133,26 +127,21 @@ $catalogo = $base->query("SELECT * FROM catalogo");
     <section id="carouselExampleIndicators" class="carousel slide container-banner">
 
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
 
       <div class="carousel-inner">
-        <?=banners($banners)?>
+        <?= banners($banners) ?>
       </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
 
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -161,63 +150,85 @@ $catalogo = $base->query("SELECT * FROM catalogo");
     <!--libros destacados-->
     <section class="destacados justify-content-between justify-content-md-around">
 
-      <?=destacados($destacados)?>
+      <?= destacados($destacados) ?>
 
     </section>
 
     <!--filtro-->
-    <section class="text-end align-items-center p-2 querys">
+    <section class="text-end align-items-center p-2 py-3 querys">
 
-      <select>
-        <option>Id</option>
-        <option>Categoria</option>
-        <option>Precio</option>
+      <select class="order-2 order-md-1">
+        <option>producto</option>
+        <option>categoria</option>
+        <option>precio</option>
       </select>
 
-      <input type="text" placeholder="Buscar">
+      <input type="text" placeholder="Buscar" class="order-1 order-md-2">
 
-      <button class="btn btn-primary"><i class="bi bi-search"></i></button>
+      <button type="submit" class="btn btn-primary order-3"><i class="bi bi-search"></i></button>
 
     </section>
+
+
+    <!--paginacion-->
+    <div aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item paginacion" data-tab="1"><a class="page-link" href="#catalogo">1</a></li>
+        <li class="page-item paginacion" data-tab="2"><a class="page-link" href="#catalogo">2</a></li>
+        <li class="page-item paginacion" data-tab="3"><a class="page-link" href="#catalogo">3</a></li>
+      </ul>
+    </div>
+    <!---hasta aqui-->
+    
 
     <!--catalogo-->
     <section class="d-flex gap-2 my-4 px-3 catalogo" id="catalogo">
-      <?= catalogo($catalogo)?>
+      
     </section>
 
-
+    <!--paginacion-->
+    <div aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item paginacion" data-tab="1"><a class="page-link" href="#catalogo">1</a></li>
+        <li class="page-item paginacion" data-tab="2"><a class="page-link" href="#catalogo">2</a></li>
+        <li class="page-item paginacion" data-tab="3"><a class="page-link" href="#catalogo">3</a></li>
+      </ul>
+    </div>
     <!---hasta aqui-->
 
+
     <!-- Modal -->
-    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog ">
-        <div class="modal-content ventana ">
-          <div class="modal-header row titulo">
-            <h1 class="modal-title fs-5 col-7 " id="exampleModalLabel">
+    <aside class="cart-container d-none">
+    
+    <div class="cart-container-bg">
+      <div class="cart">
+<!-- 
+        <div class="cart-header d-flex justify-content-between">
+            <h3>
               Modal title
-            </h1>
-            <button type="button" class="btn-close col-5" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-          <div class="modal-body ventanaModal">
-            <figure>
-            <img src="../public/assets/img/1984.webp" class="rounded mx-auto d-block" alt="amor a 4 estaciones">
-            </figure>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum libero tempora laudantium similique dolor iure, numquam reiciendis eum consequatur quas excepturi aspernatur minima quos nam aliquid doloremque molestias atque eveniet.</p>
-            <p class="modal-footer">comment</p>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">
-              Comprar
-            </button>
-          </div>
-
+            </h3>
+            <span>
+            <i class="bi bi-x-lg" javascript:cerrar_carrito()></i>
+            </span>
         </div>
+        <div class="cart-body">
+          <figure>
+            <img src="../public/assets/img/1984.webp" class="rounded mx-auto d-block img-fluid" alt="amor a 4 estaciones">
+          </figure>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum libero tempora laudantium similique dolor iure, numquam reiciendis eum consequatur quas excepturi aspernatur minima quos nam aliquid doloremque molestias atque eveniet.
+          </p>
+          <button type="button" class="btn btn-primary">
+            Comprar
+          </button>
+        </div> -->
+
       </div>
     </div>
-
+  </aside>
   </main>
+
+
 
   <footer class="text-center text-white" id="conocenos">
     <div class="container">
@@ -227,8 +238,7 @@ $catalogo = $base->query("SELECT * FROM catalogo");
           <ul class="container d-flex flex-wrap justify-content-center gap-5">
             <li class="colmd-2 text-uppercase font-weight-bold"><a href="#inicio">inicio <i class="bi bi-house"></i></a>
             </li>
-            <li class="colmd-2 text-uppercase font-weight-bold"><a href="#catalogo">catalogo <i
-                  class="bi bi-journal-bookmark-fill"></i></a></li>
+            <li class="colmd-2 text-uppercase font-weight-bold"><a href="#catalogo">catalogo <i class="bi bi-journal-bookmark-fill"></i></a></li>
             <li class="colmd-2 text-uppercase font-weight-bold"><a href="#cuenta">cuenta <i class="bi bi-person-badge"></i></a></li>
             <li class="colmd-2 text-uppercase font-weight-bold"><a href="#conocenos">Conocenos <i class="bi bi-question-circle"></i></a></li>
 

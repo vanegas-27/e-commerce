@@ -52,16 +52,19 @@
   <!--links de css-->
   <link rel="stylesheet" href="./assets/styles/variables.css" />
   <link rel="stylesheet" href="./assets/styles/index.css" />
-  <link rel="stylesheet" href="./assets/styles/styles_desktop.css" media="screen and (min-width: 700px)" />
 
   <!--link de jquey-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <script src="../src/index.js"></script>
-  <script defer src="../src/app.js"></script>
+  <script defer src="../src/ajax.js"></script>
 </head>
 
 <body data-bs-theme="light">
+
+  <style>
+ 
+  </style>
   <header class="container-fluid container-header pt-3 text-center" id="inicio">
     <div class="container row justify-content-evenly pb-1 m-auto">
       <figure class="col-5 col-md-3 d-flex align-items-center m-0 order-1 order-md-2">
@@ -169,6 +172,7 @@
     <section class="d-flex gap-2 my-4 px-3 catalogo" id="catalogo">
 
       <div class="card">
+        <span>categoria books</span>
         <img src="../public/assets/img/un-mundo-feliz.webp" alt="Foto libro catalogo" class="img-fluid" />
         <div class="card-body">
           <h4 class="card-title">Card title</h4>
@@ -321,6 +325,24 @@
       </div>
 
     </section>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <!-- Modal -->
     <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

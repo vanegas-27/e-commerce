@@ -1,32 +1,54 @@
 <?php
+include "../bd.php";
 
-function catalogo($result) : string {
+$base = new Bd();
+
+$dic = [
+    'i' => '0,9',
+    '1' => '0,9',
+    '2' => '9,9',
+    '3' => '18,9'
+];
+
+isset($_GET["colum"])?
+$catalogo = $base->query("SELECT * FROM catalogo WHERE `{$_GET['colum']}` like '{$_GET['value']}%'"):
+$catalogo = $base->query("SELECT * FROM catalogo LIMIT {$dic[$_GET['p']]}");
+
+
+function catalogo($result): string
+{
 
     $nodos = "";
 
-    while($row = mysqli_fetch_array($result)){
+    if(mysqli_num_rows($result) == 0){
+        return "<h3>Lo sentimos, no se encontro ningun resultado. ❌</h3>";
+    }
 
-        $nodos .="
+    while ($row = mysqli_fetch_array($result)) {
+
+        $nodos .= "
         <div class='card'>
-            <img src='".$row["img"]."' alt='Foto libro catalogo' class='img-fluid' />
+            <span>{$row['categoria']}</span>
+            <img src='" . $row["img"] . "' alt='Foto libro catalogo' class='img-fluid' data-id='" . $row["id"] . "' />
             <div class='card-body'>
-                <h4 class='card-title'>".$row["categoria"]."</h4>
+                <h4 class='card-title'>" . $row["producto"] . "</h4>
                 <span class='star d-flex gap-2'>
-                    &starf;&starf;&starf;&starf;&star;<i>$".$row["precio"]."</i>
+                    &starf;&starf;&starf;&starf;&star;<i>$" . $row["precio"] . "</i>
                 </span>
                 <div class='botons'>
-                    <button type='button' class='btn btn-outline-primary' data-bs-toggle='modal' data-bs-target='#exampleModal' id='".$row["id"]."'>
+                    <button type='button' class='btn btn-outline-success btnCart' data-id='" . $row["id"] . "'>
                     Ver
                     </button>
-                    <button class='btn btn-outline-primary'>
+                    <button class='btn btn-outline-success '>
                     <i class='bi bi-cart-plus'></i>
                     </button>
                 </div>
             </div>
         </div>\n
         ";
-
     };
-    
+
     return $nodos;
 }
+
+echo catalogo($catalogo);
