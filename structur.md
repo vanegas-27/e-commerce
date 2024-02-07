@@ -2,6 +2,8 @@
 └── 📁e-commerce
     └── .gitignore
     └── apuntes.jQuery.md
+    └── e_commerce.sql
+    └── index.html
     └── 📁public
         └── 📁assets
             └── 📁img
@@ -50,7 +52,7 @@
                 └── un-mundo-feliz.webp
                 └── viaje-al-centro-de-la-tierra.webp
             └── 📁styles
-                └── index.css
+                └── inde.css
                 └── variables.css
         └── favicon.ico
         └── index.html
@@ -58,11 +60,12 @@
     └── 📁src
         └── 📁js
             └── ajax.js
-            └── index.js
+            └── inde.js
         └── 📁php
             └── bd.php
             └── 📁components
                 └── banner.php
+                └── carrito.php
                 └── catalogo.php
                 └── destacados.php
                 └── modal.php

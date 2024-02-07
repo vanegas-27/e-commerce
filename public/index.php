@@ -3,8 +3,6 @@
 include("../src/php/bd.php");
 include("../src/php/components/banner.php");
 include("../src/php/components/destacados.php");
-// include("../src/php/components/catalogo.php");
-
 
 
 $base = new Bd();
@@ -12,15 +10,6 @@ $base = new Bd();
 $banners = $base->query("SELECT * FROM banners");
 
 $destacados = $base->query("SELECT * FROM destacados");
-
-// $catalogo = $base->query("SELECT * FROM catalogo");
-
-// echo "<pre>";
-// print_r($);
-// echo "</pre>";
-
-
-
 
 ?>
 
@@ -76,9 +65,8 @@ $destacados = $base->query("SELECT * FROM destacados");
   <!--link de jquey-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-  <script defer src="../src/js/index.js"></script>
+  <script async src="../src/js/index.js"></script>
   <script async src="../src/js/ajax.js"></script>
-
 
 </head>
 
@@ -96,7 +84,7 @@ $destacados = $base->query("SELECT * FROM destacados");
 
       <ul class="d-flex col-7 col-md-2 justify-content-end gap-3 align-items-center mb-0 order-2">
         <li class="heartbeat"><i class="bi bi-cloud-moon-fill" id="darkMode"></i></li>
-        <li class="heartbeat"><i class="bi bi-cart4"></i></li>
+        <li class="heartbeat cartB"><i class="bi bi-cart4"></i></li>
       </ul>
     </div>
     <nav>
@@ -109,6 +97,29 @@ $destacados = $base->query("SELECT * FROM destacados");
     </nav>
   </header>
 
+  <!--seccion del carrito-->
+
+  <!-- <article class="d-flex aside-cars-content-cart">
+      <figure class="d-flex">
+          <img src="../public/assets/img/icono.jpg" alt="..." loading="lazy">
+          <figcaption>Imagen</figcaption>
+      </figure>
+      <span>$30.300</span>
+      <i class="bi bi-x cartX" id="" data-tab="1"></i>          
+  </article> -->
+
+  <aside class="aside-cars">
+        <section class="aside-cars-content">
+            <h4><i class="bi bi-arrow-left-short"></i>Mis ordenes</h4>
+            <div class="cartRender">
+
+
+            </div>
+        </section>
+    </aside>
+
+    <div class="pp"></div>
+
   <!--menu cel-->
   <aside class="menuCel d-block d-sm-none">
     <ul class="p-0 m-0 w-75 m-auto">
@@ -118,6 +129,7 @@ $destacados = $base->query("SELECT * FROM destacados");
       <li><a href="#conocenos"><i class="bi bi-question-circle"></i></a></li>
     </ul>
   </aside>
+
 
   <main class="container-fluid m-auto p-0">
 
@@ -153,6 +165,18 @@ $destacados = $base->query("SELECT * FROM destacados");
       <?= destacados($destacados) ?>
 
     </section>
+
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="liveToast">
+      <div class="toast-header">
+        <img src="../public/assets/img/icono.png" class="rounded me-2 img-fluid icoImg" alt="...">
+        <strong class="me-auto">E-commerce</strong>
+        <small>compra exitosa.!</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Gracias por tu compra, el pedido esta en camino.❤️
+      </div>
+    </div>
 
     <!--filtro-->
     <section class="text-end align-items-center p-2 py-3 querys">
@@ -202,33 +226,11 @@ $destacados = $base->query("SELECT * FROM destacados");
     
     <div class="cart-container-bg">
       <div class="cart">
-<!-- 
-        <div class="cart-header d-flex justify-content-between">
-            <h3>
-              Modal title
-            </h3>
-            <span>
-            <i class="bi bi-x-lg" javascript:cerrar_carrito()></i>
-            </span>
-        </div>
-        <div class="cart-body">
-          <figure>
-            <img src="../public/assets/img/1984.webp" class="rounded mx-auto d-block img-fluid" alt="amor a 4 estaciones">
-          </figure>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum libero tempora laudantium similique dolor iure, numquam reiciendis eum consequatur quas excepturi aspernatur minima quos nam aliquid doloremque molestias atque eveniet.
-          </p>
-          <button type="button" class="btn btn-primary">
-            Comprar
-          </button>
-        </div> -->
 
       </div>
     </div>
   </aside>
   </main>
-
-
 
   <footer class="text-center text-white" id="conocenos">
     <div class="container">
@@ -265,8 +267,6 @@ $destacados = $base->query("SELECT * FROM destacados");
       <section class="text-center mb-5">
         <i class="bi bi-facebook px-1"></i>
         <i class="bi bi-twitter-x px-1"></i>
-        <i class="bi bi-github px-1"></i>
-        <i class="bi bi-whatsapp px-1"></i>
         <i class="bi bi-instagram px-1"></i>
         <i class="bi bi-linkedin px-1"></i>
       </section>

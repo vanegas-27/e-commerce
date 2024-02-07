@@ -38,15 +38,20 @@ class Bd{
         
     }
 
+    function read($consulta){
+
+        $array = [];
+
+        while($row = mysqli_fetch_array($consulta)){
+            array_push($array, $row["id"]);
+            array_push($array, $row["img"]);
+            array_push($array, $row["producto"]);
+            array_push($array, $row["precio"]);
+        };
+
+        return $array;
+    }
+
 
 };
-
-
-
-// $destacados = [
-//     "../public/assets/img/cancion de hielo y fuego-choque de reyes.webp",
-//     "../public/assets/img/cancion de hielo y fuego-danza de dragones.webp",
-//     "../public/assets/img/cancion de hielo y fuego-festin de cuervos.webp",
-//     "../public/assets/img/cancion de hielo y fuego-juego de tronos.webp"
-// ];
 

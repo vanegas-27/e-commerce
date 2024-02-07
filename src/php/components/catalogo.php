@@ -39,7 +39,7 @@ function catalogo($result): string
                     <button type='button' class='btn btn-outline-success btnCart' data-id='" . $row["id"] . "'>
                     Ver
                     </button>
-                    <button class='btn btn-outline-success '>
+                    <button class='btn btn-outline-success carrito' data-id='". $row["id"] ."'>
                     <i class='bi bi-cart-plus'></i>
                     </button>
                 </div>

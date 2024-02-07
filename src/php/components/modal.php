@@ -25,9 +25,7 @@ while($row = mysqli_fetch_array($catalogo)){
         <p>
         {$row['descripcion']}
         </p>
-        <button type='button' class='btn btn-outline-success'>
-            Comprar
-        </button>
+        <button type='button' class='btn btn-outline-success' id='liveToastBtn' data-id='" . $row["id"] . "'>Comprar</button>
     </div>
 ";
 }

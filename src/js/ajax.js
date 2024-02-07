@@ -1,48 +1,37 @@
 $(() => {
-  function catalogoAjax(query) {
+
+
+  function carrito(id){
+
     $.ajax({
-      type: "GET",
-      url: "../src/php/components/catalogo.php",
+      type : "POST",
+      url : "../src/php/components/carrito.php",
       async: false,
-      data: {
-        p: query,
+      data : {
+        id
       },
 
-      // beforeSend() {
-      //   console.log("peticion recibida...");
-      //   $(".catalogo").html("<div class='loader'></div>");
-      // },
-
-      success() {
-        $(".catalogo").html("<div class='loader'></div>");
-        console.log("peticion enviada...");
+      success(){
+        console.log("peticion carrito enviada...")
       },
 
-      complete(res) {
-        $(".catalogo").html($(res.responseText));
+      complete(data){
+        console.log(data);
+        $(".cartRender").html(data.responseText);
 
-        $(".catalogo .btnCart").click(function () {
-          modalAjax($(this).data("id"));
-        });
-
-        $(".card img").dblclick(function(){
-          modalAjax($(this).data("id"));
+        $(".cartX").click(function(){
+          carrito($(this).data("tab") - 20);
         })
 
-        console.log("peticion completada.");
       },
 
-      error(err) {
-        alert("Error en la conexión" + err.status);
-      },
+      error(err){
+        alert("ocurrio un problema. "+ err);
+      }
+
     });
   }
 
-  catalogoAjax("i");
-
-  $(".paginacion").click(function () {
-    catalogoAjax($(this).data("tab"));
-  });
 
   function modalAjax(id) {
     $.ajax({
@@ -53,9 +42,6 @@ $(() => {
         id: id,
       },
 
-      // beforeSend() {
-      //   console.log("peticion recibida...");
-      // },
 
       success() {
         console.log("peticion enviada...");
@@ -69,10 +55,140 @@ $(() => {
           $(".cart-container").addClass("d-none");
         });
 
+        const toastTrigger = document.getElementById("liveToastBtn");
+        const toastLiveExample = document.getElementById("liveToast");
+
+        if (toastTrigger) {
+          const toastBootstrap =
+            bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+            toastTrigger.addEventListener("click", () => {
+            toastBootstrap.show();
+            $(".cart-container").addClass("d-none");
+          });
+        }
+
         console.log("peticion completada.");
       },
     });
   }
+
+  function catalogoAjax(query) {
+    $.ajax({
+      type: "GET",
+      url: "../src/php/components/catalogo.php",
+      async: false,
+      data: {
+        p: query,
+      },
+
+      success() {
+        $(".catalogo").html("<div class='loader'></div>");
+        console.log("peticion enviada...");
+      },
+
+      complete(res) {
+        $(".catalogo").html($(res.responseText));
+
+        $(".catalogo .btnCart").click(function () {
+          modalAjax($(this).data("id"));
+        });
+
+        $(".card img").click(function () {
+          modalAjax($(this).data("id"));
+        });
+
+        $(".carrito").click(function(){
+          carrito($(this).data("id"));
+        });
+
+        console.log("peticion completada.");
+      },
+
+      error(err) {
+        alert("Error en la conexión" + err.status);
+      },
+    });
+  }
+
+  function busquedaAjax(colum, value) {
+    $.ajax({
+      type: "GET",
+      url: "../src/php/components/catalogo.php",
+      async: true,
+      data: {
+        colum,
+        value,
+      },
+      success() {
+        console.log("peticion enviada...");
+      },
+
+      complete(res) {
+        $(".catalogo").html($(res.responseText));
+        console.log("peticion completada.");
+
+
+        $(".catalogo .btnCart").click(function () {
+          modalAjax($(this).data("id"));
+        });
+
+        $(".card img").click(function () {
+          modalAjax($(this).data("id"));
+        });
+
+        $(".bi-x-lg").click(() => {
+          $(".cart-container").addClass("d-none");
+        });
+
+
+        const toastTrigger = document.getElementById("liveToastBtn");
+        const toastLiveExample = document.getElementById("liveToast");
+
+        if (toastTrigger) {
+          const toastBootstrap =
+            bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+          toastTrigger.addEventListener("click", () => {
+            toastBootstrap.show();
+            $(".cart-container").addClass("d-none");
+          });
+        }
+
+      },
+
+      error(err) {
+        alert("Error en la conexión" + err.status);
+      },
+    });
+  }
+
+
+
+  catalogoAjax("i");
+
+  $(".paginacion").click(function () {
+    catalogoAjax($(this).data("tab"));
+  });
+
+
+  window.colum = "producto";
+
+  $("select").change(() => {
+    colum = $("select").val();
+    console.log(colum);
+  });
+
+  $(".bi-search").click(() => {
+    if ($("input[type=text]").val() == "") {
+      return;
+    }
+
+    busquedaAjax(window.colum, $("input[type=text]").val());
+  });
+
+  $(".cartB").click(()=> {
+    carrito(0);
+    $(".aside-cars").toggle();
+});
 
 
 });

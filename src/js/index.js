@@ -1,9 +1,5 @@
-// $(document).ready(function($){
-  
-// });
 
 $(() => {
-
 
 
 
@@ -18,42 +14,11 @@ $(() => {
     })
 
 
-    window.colum = "producto";
+    $(".aside-cars").hide();
 
-    $('select').change(()=> {
-        colum = $('select').val();
-        console.log(colum); 
+    $(".bi-arrow-left-short").click(()=>{
+        $(".aside-cars").hide();
     })
-
-    $('.bi-search').click(()=> {
-
-        if($("input[type=text]").val() == ""){
-            return;
-        }
-
-        $.ajax({
-            type : "GET",
-            url : "../src/php/components/catalogo.php",
-            async : true,
-            data : {
-                colum : window.colum,
-                value : $("input[type=text]").val()
-            },
-            success(){console.log("peticion enviada...")},
-
-            complete(res){
-                $(".catalogo").html($(res.responseText));
-                console.log("peticion completada.");
-            },
-
-            error(err) {
-                alert("Error en la conexión" + err.status);
-            }
-        });
-        
-    })
-
-
 
     
 });

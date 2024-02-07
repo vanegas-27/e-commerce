@@ -2,15 +2,6 @@ html {
 	font-family: 60.5%;
 }
 
-:root {
-	--bg-color: #181a1b;
-	--text-color: #d9d9d9;
-	--link-color: #ff7472;
-}
-
-
-/*clases animadas*/
-
 
 
 * {
@@ -104,6 +95,135 @@ body {
 		color: var(--color1);
 	}
 }
+
+
+.toast{
+	position: fixed;
+    bottom: 49px;
+	width: 90%;
+	max-width: 350px;
+    background: radial-gradient(var(--color1) , var(--color4));
+    right: 15px;
+    z-index: 5;
+    color: var(--white);
+
+}
+
+.toast .toast-header .icoImg{
+	width: 50px;
+	filter: drop-shadow(1px 1px 5px var(--black));
+}
+
+
+.aside-cars{
+	position: relative;
+}
+
+.aside-cars-content{
+	width: 100%;
+	max-width: 350px;
+	max-height: 70vh;
+	overflow-y: scroll;
+	overflow-x:  hidden;
+	scroll-snap-type:y mandatory ;
+	position: fixed;
+	z-index: 10;
+	top: 22.2vh;
+	right: 0px;
+	background-color: var(--bgBone);
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	border-radius: 10px 0px 0px 10px;
+}
+
+.aside-cars-content::-webkit-scrollbar{
+	width: 0px;
+}
+
+.aside-cars-content h4{
+	display: flex;
+	align-items: center;
+	font-size: 1.3em;
+	color: var(--color1);
+	font-weight: bold;
+
+	&>i {
+	font-size: 1.5em;
+	color: rgb(168, 159, 159);
+	cursor: pointer;
+	padding: 0px 2px;
+	transition: translate .30s ease-in-out;
+
+		&:hover{
+			color: red;
+			translate: -5px 0px;
+		}
+	}
+
+}
+
+.aside-cars-content-cart{
+	position: relative;
+	scroll-snap-align:center;
+	background-color: var(--color5);
+	margin: 10px 5px;
+	border-radius: 10px;
+}
+
+
+.aside-cars-content-cart figure{
+	width: 70%;
+	align-items: center;
+	font-weight: 500;
+	margin: 10px 0px;
+
+	& img{
+		width: 60px;
+		height: 60px;
+		object-fit: fill;
+		border-radius: 15px;
+		margin: 0px 10px;
+	}
+}
+
+.cart-span{
+	font-family: var(--fontSecondary);
+	padding: 2px 8px;
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
+.aside-cars-content-cart span,
+.aside-cars-content-cart span ~ i{
+	padding: 0px;
+	margin: 0px;
+	display: flex;
+	align-items: center;
+	font-weight: 400;
+}
+.aside-cars-content-cart span{
+	width: 20%;
+	padding: 0px 5px;
+}
+.aside-cars-content-cart span ~ i{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	color: var(--black);
+	cursor: pointer;
+	height: 20px;
+	width: 20px;
+	transition: all .40s ease-in-out;
+	font-size: 1.5rem;
+
+	&:hover{
+		
+		color: red;
+		transform: rotate(180deg);
+	}
+}
+
 
 
 .menuCel {
@@ -235,11 +355,6 @@ body {
 	object-fit: cover;
 	transition: all .30s ease-in-out;
 
-	&:hover{
-		object-fit: contain;
-	}
-
-
 }
 
 
@@ -290,7 +405,7 @@ body {
 .cart-container .cart-container-bg .cart{
 	/* background-color: var(--modal2); */
 	background-color: #000000b2;
-	z-index: 4;
+	z-index: 20;
 	max-width: 370px;
 	margin: 10px auto;
 	border-radius: 15px;
