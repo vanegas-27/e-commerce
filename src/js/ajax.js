@@ -20,7 +20,7 @@ $(() => {
         $(".cartRender").html(data.responseText);
 
         $(".cartX").click(function(){
-          carrito($(this).data("tab") - 20);
+          carrito($(this).data("tab") - 100);
         })
 
       },

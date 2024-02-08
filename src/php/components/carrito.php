@@ -50,7 +50,7 @@ function addCarrito($base){
 }
 
 function removeCarrito($base){
-    $suma = 20 + $_POST['id'];
+    $suma = 100 + $_POST['id'];
     $base ->query("DELETE FROM carrito WHERE id = '{$suma}';");
     return showCarrrito($base);
 };
@@ -78,7 +78,5 @@ function ejecute($base){
 }
 
 
-
-// $val = $_POST['query'] == 'crear'?addCarrito($base):removeCarrito($base);
 
 echo $value;
